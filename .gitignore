@@ -1,0 +1,9 @@
+# Python project configuration
+__pycache__/
+*.pyc
+.env
+.venv/
+.env.local
+.cache/
+logs/
+
