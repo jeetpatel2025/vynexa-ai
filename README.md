@@ -1,4 +1,4 @@
-# AI Chatbot (GPT-5-like)
+# Vynexa AI
 
 A sophisticated Python-based AI chatbot inspired by ChatGPT with advanced GPT-5-like capabilities including:
 
