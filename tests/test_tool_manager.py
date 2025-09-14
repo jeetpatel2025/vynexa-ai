@@ -48,6 +48,7 @@ class TestToolManager:
         assert result['success'] == True
         assert 'Web search results for' in result['result']
         assert 'test query' in result['result']
+        assert 'Mock result' in result['result']
 
     def test_tool_enabling_disabling(self, config):
         """Test enabling and disabling tools."""
