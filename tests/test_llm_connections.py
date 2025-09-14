@@ -10,11 +10,11 @@ class TestLLMClient:
     @pytest.fixture
     def config(self):
         return {
-            'provider': 'openrouter',
+            'provider': 'openai',
             'model': 'gpt-4o',
             'max_tokens': 1000,
             'temperature': 0.7,
-            'openrouter_api_key': 'test-key'
+            'openai_api_key': 'test-key'
         }
 
     @pytest.mark.asyncio

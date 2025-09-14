@@ -1,9 +1,13 @@
 import os
+import sys
 import asyncio
 import uuid
 from flask import Flask, render_template, request, jsonify
 from flask_socketio import SocketIO, emit
 from dotenv import load_dotenv
+
+# Add current directory to Python path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from src.core.chatbot import ChatBot
 
