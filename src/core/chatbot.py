@@ -41,12 +41,19 @@ class ChatBot:
         tools_needed = await self.tool_manager.analyze_tool_need(user_message)
         
         # Generate response with all context
-        response = await self._generate_response(
-            user_message, 
-            relevant_memories, 
-            tools_needed,
-            context
-        )
+        # Add timeout to limit response time
+        try:
+            response = await asyncio.wait_for(
+                self._generate_response(
+                    user_message, 
+                    relevant_memories, 
+                    tools_needed,
+                    context
+                ),
+                timeout=10.0  # 10 seconds timeout
+            )
+        except asyncio.TimeoutError:
+            response = "Sorry, the response took too long to generate. Please try again."
         
         # Add response to conversation
         self.conversation.add('assistant', response)
